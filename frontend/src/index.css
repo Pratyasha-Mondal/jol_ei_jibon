@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --color-brand-bg: #e8f0ff;
+  --color-brand-card: #f5f7fb;
+  --color-brand-primary: #3aa6b9;
+  --color-brand-warning: #ffd166;
+  --color-brand-pollution: #f77f00;
+  --color-brand-danger: #d62828;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: #334155;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .clay-card {
+    background-color: var(--color-brand-card);
+    border-radius: 24px;
+    box-shadow: 
+      10px 10px 20px #c5d0e6, 
+      -10px -10px 20px #ffffff;
+    transition: all 0.3s ease;
+  }
+  
+  .clay-card:hover {
+    box-shadow: 
+      14px 14px 28px #c5d0e6, 
+      -14px -14px 28px #ffffff;
+    transform: translateY(-3px);
+  }
+
+  .clay-card-inset {
+    background-color: var(--color-brand-card);
+    border-radius: 16px;
+    box-shadow: 
+      inset 6px 6px 12px #c5d0e6, 
+      inset -6px -6px 12px #ffffff;
+  }
+
+  .clay-btn {
+    background-color: var(--color-brand-primary);
+    color: white;
+    border-radius: 16px;
+    box-shadow: 
+      6px 6px 12px #9ba8c3, 
+      -6px -6px 12px #ffffff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .clay-btn:hover {
+    box-shadow: 
+      8px 8px 16px #9ba8c3, 
+      -8px -8px 16px #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .clay-btn:active {
+    box-shadow: 
+      inset 4px 4px 8px rgba(0,0,0,0.1), 
+      inset -4px -4px 8px rgba(255,255,255,0.7);
+    transform: translateY(1px);
+  }
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
